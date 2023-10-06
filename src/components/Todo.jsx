@@ -40,11 +40,9 @@ function Todo() {
 
   const handleEditTodo = (id, newContent, isEdit) => {
     const url = 'http://localhost:3000/tasks/' + id;
-    if(!isEdit) {
       axios.put(url, { text: newContent, isEdit: !isEdit }).then((response) => {
         console.log(response);
       });
-    }
     setTasks(
       tasks.map((task) =>
         task._id === id
